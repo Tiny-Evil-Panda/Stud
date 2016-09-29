@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>calculation</title>
+<body>
+<script type="text/javascript">
+function  kalk(){
+var n1=document.getElementById('num1').value
+                var n2=document.getElementById('num2').value
+                n1=parseFloat(n1)
+                n2=parseFloat(n2)
+                var a=document.getElementById('act').value
+                var r=0
+if(a==1) r=n1+n2
+                if(a==2) r=n1-n2
+                if(a==3) r=n1*n2
+                if(a==4){
+                               if(n2==0){
+alert("на 0 делить нельзя")
+                 document.getElementById("num2").value=""
+                 document.getElementById("num2").focus()
+                               }
+                               else r=n1/n2
+                }         
+                document.getElementById("result").value=r
+}
+</script>
+</head>
+<body>
+<h1>Калькулятор</h1>
+<form id="form1" name="form1" method="post" action="">
+  <table width="400" border="1" align="center" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>число1</td>
+<td><input type="text" name="num1" id="num1" /></td>
+    </tr>
+    <tr>
+      <td>число2</td>
+      <td><input type="text" name="num2" id="num2" /></td>
+    </tr>
+    <tr>
+      <td>действие</td>
+      <td><select name="act" id="act">
+<option value="1">сложение</option>
+        <option value="2">вычитание</option>
+        <option value="3">умножение</option>
+        <option value="4">деление</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>результат</td>
+      <td><input type="text" name="result" id="result" /></td>
+    </tr>
+    <tr>
+<td colspan="2"><input type="button" name="button" id="button" onclick="kalk()" value="вычислить" /></td>
+    </tr>
+  </table>
+</form>
+<p>&nbsp;</p> 
+</body>
+</html>
